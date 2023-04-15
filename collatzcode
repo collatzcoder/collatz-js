@@ -1,0 +1,43 @@
+//Collatz conjecture, fully running//
+function start(){
+    var retain=0
+    var processes=readInt("How many processes?")
+    while(retain!=processes){
+      var firstnum = Randomizer.nextInt(1,99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+	var x=firstnum%2
+	var nextnum=0
+	
+	if (x==1)
+	{
+	    nextnum=(firstnum*3)+1
+	    
+	}else
+	{
+	    nextnum=firstnum/2
+	    
+	}
+	x=nextnum%2
+	while (nextnum!=1)
+	{
+	if (x==1)
+	{
+	    nextnum=nextnum*3+1
+	    
+	}
+	if(x==0)
+	{
+	    nextnum=nextnum/2
+	    
+	}
+	x=nextnum%2
+	}
+	if(nextnum==1)
+	{
+	    println("string solved");
+	    retain++
+	}  
+    }
+    if(retain==processes){
+        println("No new findings");
+    }
+    }
